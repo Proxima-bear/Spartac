@@ -1,52 +1,55 @@
+/**
+ * Imports : React
+ */
 import React from "react";
 
+const CardProgram = (props) =>
 
+  <div tabIndex={0} className="collapse border bg-sky-200 opacity-80 rounded-[25px] p-[20px]">
 
-function CardProgram(proops) {
-  return (
-    <div tabIndex={0} className="collapse   border bg-sky-200 opacity-80  rounded-[25px] ">
-      <div className=" w-full flex basis-1/2  ">
-        <div className="flex flex-col w-[65%]">
-          <span className="font-extrabold text-black text-[25px] mt-[10px] ml-[20px]">
-            {proops.title}
-          </span>
-          <p className="font-bold text-black text-[13px] mt-[10px] ml-[20px]">
-            {proops.description}
-          </p>
+    <div className="relative collapse-title p-0">
 
-          <div className="collapse-title flex flex-col space-y-[10px] ">
-          <span className=" w-[90px] text-[20px] ml-[10px] font-bold mt-[20px] text-black ">
-              {proops.price}
-            </span>
-            <button className="w-[100px] h-[45px] px-[5px]  text-[13px] text-white bg-stone-700 boeder-[2px] rounded-[10px]">
-              {proops.btntext}
-            </button>
+      <div className="flex flex-col grow space-y-[20px]">
 
-           
+        <span className="font-extrabold text-[18px]">
+          {props.title}
+        </span>
+
+        <p className="font-bold text-[14px]">
+          {props.description}
+        </p>
+
+        <div className="flex justify-between items-center" >
+
+          <div className="w-[150px] p-[10px] text-[14px] text-white bg-violet-400 border-2 rounded-[10px] flex justify-center items-center">
+            Подробнее
           </div>
 
-        </div>
+          <span className="text-[32px] font-bold ">
+            {props.price} Р
+          </span>
 
-        <div className="flex basis-[70%]">
-          <img className="h-[250px] w-full"
-            src={proops.imageurl}
-          />
         </div>
-
 
       </div>
-      <div className="collapse-content text-gray-900">
-        <p>{proops.collapse}
-        </p>
-        <button className=" w-[110px] h-[45px] mt-[20px]  text-[13px] text-white bg-stone-900 boeder-[2px] rounded-[10px]">
-          {proops.buyopen}
-        </button>
+
+      <div className='absolute top-0 right-0 bottom-0 opacity-20 -z-10'>
+        <img
+          src={props.imageUrl}
+          alt={props.title} />
       </div>
 
     </div>
 
+    <div className="collapse-content p-0">
 
-  );
-}
+      <button className="w-[150px] p-[10px] text-[14px] text-white bg-violet-400 border-2 rounded-[10px] mt-[20px]">
+        Купить
+      </button>
+
+
+    </div>
+
+  </div>
 
 export default CardProgram;

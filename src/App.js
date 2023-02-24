@@ -2,18 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Programs from "./pages/Programs";
-import MyPrograms from "./pages/MyPrograms"
+import UserPrograms from "./pages/UserPrograms"
 
-function App() {
-  return (
+const App = () =>
   <Router>
     <Routes>
-      <Route path='/' element={ <Programs/> } />      
-      <Route path='/myprograms' element={ <MyPrograms/> } />  
+      <Route path='/' element={<Programs />} />
+      <Route path='/myprograms' element={<UserPrograms />} />
     </Routes>
- </Router>
+  </Router>
 
-  );
-}
 
 export default App;
